@@ -66,7 +66,28 @@ const generateBombs = (totalBombs, totalNumber) => {
     return bomb;
 }
 
+//GENERO GRIGLIA
+const generateGrid = (cellNumber, CellsPerRows, bomb) => {
+    for (let i = 1; i <= cellNumber; i++) {
+        const cell = generateCell(i, CellsPerRows);
 
+    }
+
+    grid.appendChild(cell);
+}
+
+//GENERO CELLA
+const generateCell = (number, CellsPerRows) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.innerText = number;
+    const sideLenght = `calc(100% / ${CellsPerRows})`;
+    cell.style.width = sideLenght;
+    cell.style.height = sideLenght;
+
+    return cell;
+
+}
 
 const bomb = generateBombs(totalBombs, totalCells);
 
