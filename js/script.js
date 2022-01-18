@@ -14,3 +14,16 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 1 - quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 2 - quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle */
 
+// ! INIZIO
+
+function play() {
+    playButton.innerText = ('Ricomincia');
+
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+};
+
+const playButton = document.getElementById('button');
+playButton.addEventListener('click', function () {
+    play();
+});
