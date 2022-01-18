@@ -23,7 +23,59 @@ function play() {
     grid.innerHTML = '';
 };
 
+
+// ! FASE PREPARATIVA
+
+let proves = 0;
+const totalBombs = 16;
+
+const difficult = document.getElementById('difficult').value;
+
+let totalCells;
+let CellsPerRows;
+
+switch (difficult) {
+    case 'easy':
+        totalCells = 100;
+        CellsPerRows = 10;
+
+        break;
+    case 'medium':
+        totalCells = 81;
+        CellsPerRows = 9;
+
+        break;
+    case 'hard':
+        totalCells = 49;
+        CellsPerRows = 7;
+
+        break;
+}
+
+const maxAttempts = totalCells - totalBombs;
+
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const generateBombs = (totalBombs, totalNumber) => {
+    const bomb = [];
+
+    while (bomb.length < totalBombs) {
+        const randNumber = getRandomNumber(1, totalNumber);
+        if (!bomb.includes(randNumber)) bomb.push(randNumber);
+    }
+    return bomb;
+}
+
+
+
+const bomb = generateBombs(totalBombs, totalCells);
+
+
 const playButton = document.getElementById('button');
 playButton.addEventListener('click', function () {
     play();
 });
+
+
+
+
