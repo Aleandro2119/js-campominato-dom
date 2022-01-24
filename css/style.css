@@ -39,11 +39,19 @@ header{
     height: 700px;
     border: 1px solid black;
     margin: 50px auto;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
 }
 
 .cell{
     border: 1px solid black;
     cursor: pointer;
+}
+
+.safe {
+    background-color: dodgerblue;
+}
+
+.bomb {
+    background-color: red;
 }
