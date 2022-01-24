@@ -117,3 +117,36 @@ function onCellClick(event) {
         }
     }
 }
+
+// ! FINE PARTITA (PUNTO 7)
+
+const gameOver = (bombs, attempts, hasLost) => {
+    const allCells = grid.querySelectorAll('.cell');
+
+    for (let i = 0; i < allCells.length; i++) {
+        allCells[i].removeEventListener('click', onCellClick);
+    }
+
+    showBoms(bombs);
+
+    const message = document.createElement('h2');
+    message.className = 'message';
+
+    const messageText = hasLost ? `HAI PERSO, RIPROVA (questo è il tuo punteggio ${attempts})` : `HAI VINTO!!!!!!!!`
+    message.innerText = messageText;
+    grid.appendChild(message);
+
+
+
+}
+
+const showBoms = (bombs) => {
+    const cells = document.querySelectorAll('.cell');
+    for (let i = 0; i < totalCells; i++) {
+        const cell = cells[i];
+        const cellNumber = parseInt(cell.innerText);
+        if (bombs.includes(cellNumber)) {
+            cell.classList.add('bomb');
+        }
+    }
+}
