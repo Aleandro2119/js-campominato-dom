@@ -150,3 +150,14 @@ const showBoms = (bombs) => {
         }
     }
 }
+
+// ! Esecuzione (PUNTO 8)
+
+bombs = generateBombs(totalBombs, totalCells)
+console.log(bombs);
+
+generateGrid(totalCells, columns, bombs); {
+
+};
+
+button.addEventListener("click", () => start());
