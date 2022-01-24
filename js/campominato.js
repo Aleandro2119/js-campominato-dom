@@ -57,3 +57,16 @@ const totalCells = columns * columns;
 const maxAttempts = totalCells - totalBombs;
 let bombs = [];
 
+
+// ! GENERO UNA BOMBA (PUNTO 3)
+
+const generateBombs = (totalBombs, totalNumber) => {
+    const bombs = [];
+    while (bombs.length < totalBombs) { // il numero di bombe è inferiore a 16
+        const randNumber = getRandomNumber(1, totalNumber);
+        if (!bombs.includes(randNumber)) { // Controllo se c'è nell'array di bombe
+            bombs.push(randNumber);
+        }
+    }
+    return bombs;
+}
