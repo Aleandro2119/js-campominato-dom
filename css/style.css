@@ -12,38 +12,23 @@ body{
 
 
 /*Utils*/
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
+.container {
+    max-width: 1000px;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 1.5em;
 }
 
-/*Header*/
-
-header{
-    height: 80px;
-    background-color: darkgray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
-}
-
-.menu{
-    padding: 10px 5px;
-}
-
-/*Main*/
-
-#grid{
-    width: 700px;
-    height: 700px;
+#grid {
+    height: 600px;
+    width: 600px;
     border: 1px solid black;
-    margin: 50px auto;
+    margin: 100px auto;
     display: none;
     flex-wrap: wrap;
 }
 
-.cell{
+#grid .cell {
     border: 1px solid black;
     cursor: pointer;
 }
