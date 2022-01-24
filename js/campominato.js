@@ -95,3 +95,25 @@ function createCell(cellNumber, cellsPerRow) {
     cell.style.width = wh;
     return cell;
 }
+
+
+// ! Gestisco l'evento al click (PUNTO 6)
+
+function onCellClick(event) {
+    const cell = event.target;
+    cell.removeEventListener("click", onCellClick);
+
+    // Controllo se è una bomba
+
+    let number = parseInt(cell.id);
+
+    if (bombs.includes(number)) {
+        gameOver(bombs, attempts, true);
+    } else {
+        cell.classList.add("safe")
+        attempts++;
+        if (attempts === maxAttempts) {
+            gameOver(bombs, attempts, false);
+        }
+    }
+}
