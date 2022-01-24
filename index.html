@@ -6,34 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>JS-CAMPOMINATO-GRID</title>
-</head>
+    <title>JS-CAMPOMINATO</title>
 
 <body>
-    <!--HEADER-->
-    <header>
-        <h1>GRIGLIA DINAMICA</h1>
-
-        <button id="start">GIOCA</button>
-
-        <select id="choices" class="menu">
-            <option value="1">DIFFICOLTA' 1</option>
-            <option value="2">DIFFICOLTA' 2</option>
-            <option value="3">DIFFICOLTA' 3</option>
+    <section class="container">
+        <label for="choice">Scegli il Livello di Difficoltà</label>
+        <select id="choices">
+            <option value="1">LIVELLO 1</option>
+            <option value="2">LIVELLO 2</option>
+            <option value="3">LIVELLO 3</option>
         </select>
-    </header>
+        <button id="start">START</button>
+    </section>
 
-    <!--MAIN-->
-    <main>
-        <div class="container">
-            <div id="grid">
-
-            </div>
-
-        </div>
-    </main>
-
-    <script src="js/campo.js"></script>
+    <section>
+        <div id="grid"></div>
+    </section>
+    <script src="js/campominato.js"></script>
 </body>
 
 </html>
