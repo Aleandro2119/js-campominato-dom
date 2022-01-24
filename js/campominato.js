@@ -81,3 +81,17 @@ const generateGrid = (cellsNumber, cellsPerRow, bombs) => {
         grid.appendChild(cell);
     }
 }
+
+
+// ! GENERO LA CELLA (PUNTO 5)
+
+function createCell(cellNumber, cellsPerRow) {
+    const cell = document.createElement("div");
+    cell.id = cellNumber;
+    cell.className = "cell";
+    cell.innerText = cellNumber;
+    const wh = `calc(100% / ${cellsPerRow})`;
+    cell.style.height = wh;
+    cell.style.width = wh;
+    return cell;
+}
