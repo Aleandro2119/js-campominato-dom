@@ -70,3 +70,14 @@ const generateBombs = (totalBombs, totalNumber) => {
     }
     return bombs;
 }
+
+
+// ! GENERO LA GRIGLIA (PUNTO 4)
+
+const generateGrid = (cellsNumber, cellsPerRow, bombs) => {
+    for (let i = 1; i <= cellsNumber; i++) {
+        const cell = createCell(i, cellsPerRow);
+        cell.addEventListener('click', onCellClick);
+        grid.appendChild(cell);
+    }
+}
