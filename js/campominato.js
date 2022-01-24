@@ -13,3 +13,47 @@ BONUS:
 1- quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 2- quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle */
 
+
+// ! Funzione da riutilizzare, per generare numeri random
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// ! Recupero elementi
+const select = document.getElementById("choices");
+const grid = document.getElementById("grid");
+const button = document.getElementById("start");
+
+
+// ! Cambio il tasto del bottone e lo rinomino ricomincia (PUNTO 1)
+
+function start() {
+    button.innerText = 'Ricomincia'
+
+    grid.innerHTML = '';
+    grid.style.display = 'flex';
+};
+
+
+// ! Preparo quello che mi serve per il gioco (PUNTO 2) 
+
+let attempts = 0;
+const totalBombs = 16;
+
+let columns;
+
+switch (select.value) {
+    case "2":
+        columns = 9;
+        break;
+    case "3":
+        columns = 7;
+        break;
+    default:
+        columns = 10;
+        break;
+}
+
+const totalCells = columns * columns;
+
+const maxAttempts = totalCells - totalBombs;
+let bombs = [];
+
